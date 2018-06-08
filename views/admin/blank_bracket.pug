@@ -1,0 +1,31 @@
+doctype html
+html
+  script(src='https://code.jquery.com/jquery-3.2.1.min.js', integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=', crossorigin='anonymous')
+  script(src='/javascripts/admin.js', type='text/javascript')
+    
+div(align='center')
+  form(id='bracket')
+    table
+      tr
+        td
+          table(border=1)
+            tr
+              td #[input(type='text', data-seed-id='1', data-game-id='1', placeholder='Winner Group A')] vs. #[input(type='text', data-seed-id='8', data-game-id='1', placeholder='Runner Up Group B')]
+            tr
+              td #[input(type='text', data-seed-id='2', data-game-id='2', placeholder='Winner Group C')] vs. #[input(type='text', data-seed-id='7', data-game-id='2', placeholder='Runner Up Group D')]
+            tr
+              td #[input(type='text', data-seed-id='3', data-game-id='3', placeholder='Winner Group E')] vs. #[input(type='text', data-seed-id='6', data-game-id='3', placeholder='Runner Up Group F')]
+            tr
+              td #[input(type='text', data-seed-id='4', data-game-id='4', placeholder='Winner Group G')] vs. #[input(type='text', data-seed-id='5', data-game-id='4', placeholder='Runner Up Group H')]
+            tr
+              td #[input(type='text', data-seed-id='1', data-game-id='5', placeholder='Winner Group B')] vs. #[input(type='text', data-seed-id='8', data-game-id='5', placeholder='Runner Up Group A')]
+            tr
+              td #[input(type='text', data-seed-id='2', data-game-id='6', placeholder='Winner Group D')] vs. #[input(type='text', data-seed-id='7', data-game-id='6', placeholder='Runner Up Group C')]
+            tr
+              td #[input(type='text', data-seed-id='3', data-game-id='7', placeholder='Winner Group F')] vs. #[input(type='text', data-seed-id='6', data-game-id='7', placeholder='Runner Up Group E')]
+            tr
+              td #[input(type='text', data-seed-id='4', data-game-id='8', placeholder='Winner Group H')] vs. #[input(type='text', data-seed-id='5', data-game-id='8', placeholder='Runner Up Group G')]
+    button#js-submit-data Submit
+    
+    
+    
