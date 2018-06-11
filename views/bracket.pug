@@ -64,11 +64,11 @@ section#bracket
           | Final
           br
           span.date July 15
-        ul(class='matchup game15 championship', data-games='30')
+        ul(class='matchup game15 championship', data-games='none')
           li(class='team team-top ' + userPickedTeamData[48].pickCSS, id='slot29', data-team-id=userPickedTeamData[48].teamID) #{userPickedTeamData[48].teamName}
           li(class='team team-bottom ' + userPickedTeamData[49].pickCSS, id='slot30', data-team-id=userPickedTeamData[49].teamID) #{userPickedTeamData[49].teamName}
   
-        span(id='ncaaWinner', data-pick=userPickedTeamData[62].pickCSS ? userPickedTeamData[62].pickCSS : '', data-team=userPickedTeamData[62].seedID ? userPickedTeamData[62].seedID + ' ' + userPickedTeamData[62].teamName : '', data-team-id=userPickedTeamData[62].teamID)
+        span(id='worldCupWinner', data-pick=userPickedTeamData[62].pickCSS ? userPickedTeamData[62].pickCSS : '', data-team=userPickedTeamData[62].seedID ? userPickedTeamData[62].seedID + ' ' + userPickedTeamData[62].teamName : '', data-team-id=userPickedTeamData[62].teamID)
 
     div.split.split-two.top
       //- RIGHT TOP 4 END

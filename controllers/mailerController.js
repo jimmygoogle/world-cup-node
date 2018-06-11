@@ -15,7 +15,7 @@ exports.sendConfirmationEmail = (args) => {
   const sendMail = promisify(send);
   return sendMail({
       html: generateHTML('confirmation', args),
-      subject: '\u{1F3C0}' + 'Welcome to the ' +  args.year + ' ' + args.poolName + ' March Madness Pool',
+      subject: '\u{26BD}' + 'Welcome to the ' +  args.year + ' ' + args.poolName + ' World Cup Pool',
       to: args.emailAddress
     });
 }
@@ -25,7 +25,7 @@ exports.sendErrorEmail = (args) => {
   //console.log(err);
   const sendMail = promisify(send);
   return sendMail({
-      subject: 'March Madness error',
+      subject: 'World Cup error',
       text: JSON.stringify(err, null, 2),
       to: process.env.ERROR_EMAIL
     });
