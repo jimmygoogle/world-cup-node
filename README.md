@@ -1,4 +1,4 @@
-# March Madness Bracket
+# World Cup Bracket
 
 World Cup bracket written in node.js/mysql. This is very similar to the node ncaa application, it uses the same logic and DB structure. The DB files and schema are currently unavailable, this repo is mainly for code portfolio purposes.
 
