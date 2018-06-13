@@ -20,6 +20,7 @@ hr.details {
 
 .pool_details, .bracket_details {
   max-width: 300px;
+  min-height: 500px;
   margin: 0 auto;
   text-align: center;
 }
