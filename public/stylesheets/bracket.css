@@ -130,7 +130,7 @@ li {
 }
 
 .championship-header {
-  transform: translate(0px, 0px);
+  transform: translate(0px, -65px);
 }
 
 .champion1 li, .champion li, .round li {
@@ -295,7 +295,7 @@ ul.championship {
   .elite-eight-top {transform: translate(0,0);}
   .elite-eight-bottom {transform: translate(0,0);}
   .quaterfinal-header {transform: translate(0,0);}
-  .championship-header {transform: translate(0,0);}
+  .championship-header {transform: translate(0,-10);}
   .semifinal-header {transform: translate(0,0);}
   .final-four-right {padding-bottom: 40px;}
   .bracket_details {max-width: 90%;}

@@ -25,7 +25,7 @@ const getStandings = (args) => {
     poolStatus = rows[0][0].poolOpen;
 
     // set the round id to calculate the best possible score from
-    const roundId = isSweetSixteenBracket ? 3 : 1;
+    const roundId = 1;
 
     // figure out best possible score so we can tell the user how many they 'could' potentially score
     return db.executeQuery({
@@ -37,6 +37,7 @@ const getStandings = (args) => {
     bestPossibleScore = rows[0][0].bestPossibleScore;
     adjustedScore = rows[0][0].adjustedScore;
 
+    console.log([poolStatus, cookiedPoolName, bracketTypeName]);
     return db.executeQuery({
       query: 'call Standings(?, ?, ?)',
       queryParams: [poolStatus, cookiedPoolName, bracketTypeName]
@@ -105,8 +106,4 @@ const getStandings = (args) => {
 
 exports.showFullStandings = (req, res) => {
   getStandings({req: req, res: res, bracketTypeName: 'normalBracket'});
-};
-
-exports.showSweet16Standings = (req, res) => {
-  getStandings({req: req, res: res, bracketTypeName: 'sweetSixteenBracket'});
 };

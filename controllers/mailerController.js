@@ -15,7 +15,7 @@ exports.sendConfirmationEmail = (args) => {
   const sendMail = promisify(send);
   return sendMail({
       html: generateHTML('confirmation', args),
-      subject: '\u{26BD}' + 'Welcome to the ' +  args.year + ' ' + args.poolName + ' World Cup Pool',
+      subject: '\u{26BD}' + '  Welcome to the ' +  args.year + ' ' + args.poolName + ' World Cup Pool',
       to: args.emailAddress
     });
 }

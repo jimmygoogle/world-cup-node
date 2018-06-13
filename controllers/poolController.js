@@ -31,7 +31,7 @@ const getAndSetPoolInfo = (args) => {
 }
 
 const setCookie = (res, poolName) => {
-  res.cookie('MarchMadness', poolName, { maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true }); 
+  res.cookie('WorldCup', poolName, { maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true }); 
 }
 
 exports.checkPoolStatus = (args) => {
@@ -42,7 +42,7 @@ exports.checkPoolStatus = (args) => {
 
 exports.getPoolName = (req, res) => {
   return new Promise(function(resolve, reject) {
-    const poolName = req.cookies.MarchMadness;
+    const poolName = req.cookies.WorldCup;
     //console.log('pool name is %s', poolName);
     if(poolName) {
       resolve(poolName);

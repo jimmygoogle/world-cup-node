@@ -8,14 +8,14 @@ $(document).ready (function() {
 });
 
 function setFinalGame() {
-  const winner = $('#bracket').find('#ncaaWinner').attr('data-team-id');
-  const pickCss = $('#bracket').find('#ncaaWinner').attr('data-pick');
+  const winner = $('#bracket').find('#worldCupWinner').attr('data-team-id');
+  const pickCss = $('#bracket').find('#worldCupWinner').attr('data-pick');
 
   if(!winner) {
     return false;
   }
 
-  $('.game63').find('li').each(function(){
+  $('.game15').find('li').each(function(){
     const teamID = $(this).attr('data-team-id');
 
     if(teamID === winner) {

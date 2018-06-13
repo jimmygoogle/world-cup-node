@@ -35,6 +35,9 @@ const bracket = {
   },
   setToken: function(string) {
     return require('crypto').createHash('md5').update(string).digest("hex"); 
+  },
+  encodeName: function(string) {
+    return require("emoji-unicode").emojiUnicode(string);
   }
 }
 
@@ -46,7 +49,8 @@ const writePicks = (args) => {
   const userSubmittedData = req.body;
   let userID, cookiedPoolName, userEditToken;
   let poolInfo = {};
-
+  
+  console.log(userSubmittedData);
   // get the pool name from the cookie
   // this will determine what happens next
   poolController.getPoolName(req, res)
@@ -61,7 +65,7 @@ const writePicks = (args) => {
     poolInfo = rows[0][0];
 
     // the bracket is still closed exit here
-    if(!isAdmin && (!poolInfo.poolOpen && !poolInfo.sweetSixteenPoolOpen)) {
+    if(!isAdmin && (!poolInfo.poolOpen)) {
       const err = new Error('The pool is currently closed.');
       promise = Promise.reject(err);
     }
@@ -92,7 +96,8 @@ const writePicks = (args) => {
           userSubmittedData.emailAddress,
           userSubmittedData.tieBreakerPoints,
           userSubmittedData.firstName,
-          userEditToken, userDisplayToken,
+          userEditToken,
+          userDisplayToken,
           userSubmittedData.bracketTypeName
         ]
       });
@@ -132,14 +137,6 @@ const writePicks = (args) => {
         queryParams: [userID, teamID, gameID]
       }));
     });
-    
-    // insert the master bracket picks for the 1st and 2nd rounds
-    if(!isAdmin && poolInfo.sweetSixteenPoolOpen) {
-      promises.push(db.executeQuery({
-        query: 'call InsertAdditionalSweetSixteenData(?)',
-        queryParams: [userID]
-      }));
-    }
 
     return Promise.all(promises);
   })
@@ -166,7 +163,7 @@ const writePicks = (args) => {
       cookiedPoolName = cookiedPoolName.charAt(0).toUpperCase() + cookiedPoolName.slice(1);
 
       // set the closing date time
-      const closingDateTime = (poolInfo.poolOpen === 1) ? poolInfo.poolCloseDateTime : poolInfo.sweetSixteenCloseDateTime;
+      const closingDateTime = poolInfo.poolCloseDateTime;
 
       // set the edit bracket url
       const editUrl = 'http://' + req.headers.host + '/bracket/' + userEditToken + '/e';

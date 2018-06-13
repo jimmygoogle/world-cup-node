@@ -43,9 +43,9 @@ function loadUserPicks() {
 
   const winnerTeamID = $('#worldCupWinner').attr('data-team-id');
   if(winnerTeamID > 0) {
-    userPicks[63] = winnerTeamID;
+    userPicks[16] = winnerTeamID;
   }
-  console.log(userPicks);
+  //console.log(userPicks);
 }
 
 function checkUserPool() {
@@ -219,7 +219,7 @@ function setUserPick(obj) {
       $('#slot29').removeClass('winner');
       $('#slot30').removeClass('winner');
       obj.addClass('winner');
-      userPicks[31] = teamID;
+      userPicks[16] = teamID;
     }
     else {
       // set new pick

@@ -5,7 +5,8 @@ const mysqlPool = mysql.createPool({
   user: process.env.MYSQL_USER,
   password: process.env.MYSQL_PASSWORD,
   database: process.env.MYSQL_DATABASE,
-  connectionLimit : process.env.MYSQL_CONNECTION_LIMIT
+  connectionLimit : process.env.MYSQL_CONNECTION_LIMIT,
+  charset: process.env.MYSQL_CHARSET
 });
 
 exports.executeQuery = function(args) {
@@ -16,6 +17,7 @@ exports.executeQuery = function(args) {
     mysqlPool.query(query, queryParams, function (err, rows, fields) {
       // reject on error states and resolve with results
       if (err) {
+        console.log(err);
         return reject(err);
       }      
       resolve(rows);

@@ -22,7 +22,6 @@ router.get('/demo', poolController.setDemoMode);
 
 // show standings
 router.get('/standings', standingsController.showFullStandings);
-router.get('/standings/sweet16', standingsController.showSweet16Standings);
 
 // admin functions
 router.get('/admin/update', showBracketController.updateAdminBracket);
