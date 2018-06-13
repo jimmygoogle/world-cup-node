@@ -5,6 +5,9 @@
 .bracket_details {
   background-color: #FFFFFF;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .ncaa-image {
@@ -18,7 +21,7 @@ hr.details {
 }
 
 
-.pool_details, .bracket_details {
+.pool_details {
   max-width: 300px;
   min-height: 500px;
   margin: 0 auto;
