@@ -35,9 +35,6 @@ const bracket = {
   },
   setToken: function(string) {
     return require('crypto').createHash('md5').update(string).digest("hex"); 
-  },
-  encodeName: function(string) {
-    return require("emoji-unicode").emojiUnicode(string);
   }
 }
 
@@ -49,8 +46,7 @@ const writePicks = (args) => {
   const userSubmittedData = req.body;
   let userID, cookiedPoolName, userEditToken;
   let poolInfo = {};
-  
-  console.log(userSubmittedData);
+
   // get the pool name from the cookie
   // this will determine what happens next
   poolController.getPoolName(req, res)
@@ -205,7 +201,6 @@ const insertTeamData = (args) => {
   .then(status => {
     let promises = [];
     const teamData = JSON.parse(req.body.teamData);
-    console.log(teamData);
 
     // insert all teams and all to promises array
     Object.keys(teamData).forEach(function(teamName) {

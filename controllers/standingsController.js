@@ -37,7 +37,6 @@ const getStandings = (args) => {
     bestPossibleScore = rows[0][0].bestPossibleScore;
     adjustedScore = rows[0][0].adjustedScore;
 
-    console.log([poolStatus, cookiedPoolName, bracketTypeName]);
     return db.executeQuery({
       query: 'call Standings(?, ?, ?)',
       queryParams: [poolStatus, cookiedPoolName, bracketTypeName]
