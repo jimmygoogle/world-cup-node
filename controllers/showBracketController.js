@@ -20,7 +20,7 @@ const bracket = {
   },
   setEmptyBrackData: function() {
     let userPickedTeamData = [];
-    for (var index = 0; index <= 63; index++) {
+    for (var index = 0; index <= 14; index++) {
       userPickedTeamData.push({ pickCSS: '' });
     }
     return userPickedTeamData;
@@ -54,7 +54,7 @@ const getBracket = (args) => {
     //if the pool is open, 'editType' is not defined
     // and we are not viewing a user's bracket in display mode
     //then set the 'editType' as 'add'
-    if((poolInfo.poolOpen || poolInfo.sweetSixteenPoolOpen) && !editType && !userToken) {
+    if((poolInfo.poolOpen) && !editType && !userToken) {
       editType = 'add';
     }
 
@@ -71,7 +71,7 @@ const getBracket = (args) => {
     else if(poolInfo.poolOpen) {
       promise = Promise.resolve([]);
     }
-    // get the master bracket picks (also for sweet 16 bracket)
+    // get the master bracket picks
     else {
       promise = db.executeQuery({
         query: 'call MasterBracket()',
@@ -84,7 +84,7 @@ const getBracket = (args) => {
     if((poolInfo.poolOpen) && !userToken) {
       userPickedTeamData = bracket.setEmptyBrackData();
     }
-    // user or master bracket data (also for sweet 16 bracket)
+    // user or master bracket data
     else {
       userPickedTeamData = rows[0];
       // if we are viewing the master bracket remove all the styling
@@ -151,7 +151,7 @@ const getBracket = (args) => {
       teamData: teamData,
       userPickedTeamData: userPickedTeamData,
       poolName: cookiedPoolName,
-      bracketType: isAdmin ? 'admin' : poolInfo.poolOpen ? 'normalBracket' : 'sweetSixteenBracket'
+      bracketType: isAdmin ? 'admin' : 'normalBracket'
     };
  
     // TODO: handle user trying to edit someone else's bracket instead of showing stack trace
@@ -161,13 +161,13 @@ const getBracket = (args) => {
     }
 
     // dont load the JS that allows changes
-    if((!poolInfo.poolOpen || !poolInfo.sweetSixteenPoolOpen) && !isAdmin && !editType) {
+    if(!poolInfo.poolOpen && !isAdmin && !editType) {
       args.guiJsOnly = 1;
     }
 
     // show user details form
     // if we are an admin or the pools are open and/or we are editing
-    if(isAdmin || ((poolInfo.poolOpen || poolInfo.sweetSixteenPoolOpen) && editType)) {
+    if(isAdmin || (poolInfo.poolOpen && editType)) {
       args.userBracketInfoForm = 1;
     }
 
@@ -190,7 +190,7 @@ const getBracket = (args) => {
     // TODO: make this more robust
     // for now just email me the error
     else {
-      //console.log(err);
+      console.log(err);
       mailerController.sendErrorEmail({err});
     }
   }); 

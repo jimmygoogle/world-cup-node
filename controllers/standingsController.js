@@ -1,5 +1,6 @@
  var db = require('../db');
 const poolController = require('./poolController');
+const mailerController = require('./mailerController');
 
 const getStandings = (args) => {
   const req = args.req;
@@ -71,13 +72,13 @@ const getStandings = (args) => {
     for(let data of remainingTeamsData[0]) {
       const index = parseInt(standingsLookup[data.userDisplayToken]);
 
-      // user pick is wrong so set the wrong team so we can follow it to the final four
+      // user pick is wrong so set the wrong team so we can follow it to the final
       if(data.userPick == 'incorrectPick') {
         incorrectPicks[data.userDisplayToken][data.teamName] = 1;     
         standingsData[index]['bestPossibleScore'] -= data.gameRoundScore;
       }
 
-      // this is an incorrect final four pick so decrement the total of correct teams left
+      // this is an incorrect final pick so decrement the total of correct teams left
       if(data.userPick == '' && (incorrectPicks[data.userDisplayToken] && incorrectPicks[data.userDisplayToken][data.teamName])) {
         standingsData[index]['bestPossibleScore'] -= data.gameRoundScore;
       }
@@ -98,6 +99,7 @@ const getStandings = (args) => {
     // TODO: make this more robust
     // for now just email me the error
     else {
+      console.log(err);
       mailerController.sendErrorEmail({err});
     }
   });
