@@ -182,8 +182,8 @@ function validateUserInput() {
 }
 
 function setUserPick(obj) {
-  // set team user picked ex: 5 Utah
-  const userPickedTeam = obj.text();
+  // set team user picked
+  const userPickedTeam = obj.html();
 
   // get game number and all possible game slots that the user pick could play in
   // ex: class = "matchup game1 65|97|113|121|125" (we need the 2nd and 3rd element)
