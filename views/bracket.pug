@@ -11,52 +11,80 @@ section#bracket
 
     div.split.split-one.top
       div.round.round-one.current
-        //- LEFT TOP 16 START
+        //- LEFT TOP 8 START
         div.round-details
           | Round of 16
           br
           span.date June 30 & July 2
         ul(class='matchup game1', data-games='17|25|29')
-          li(class='team team-top', id='slot1', data-team-id= + teamData[0].teamID) #{teamData[0].teamName}
-          li(class='team team-bottom', id='slot2', data-team-id= + teamData[1].teamID) #{teamData[1].teamName}
+          li(class='team team-top', id='slot1', data-team-id= + teamData[0].teamID) 
+            span(class='flag-icon flag-icon-' + teamData[0].countryCode + ' flag-icon-squared') 
+            |  #{teamData[0].teamName}
+          li(class='team team-bottom', id='slot2', data-team-id= + teamData[1].teamID)
+            span(class='flag-icon flag-icon-' + teamData[1].countryCode + ' flag-icon-squared') 
+            |  #{teamData[1].teamName}
         ul(class='matchup game2', data-games='18|25|29')
-          li(class='team team-top', id='slot3', data-team-id= + teamData[2].teamID) #{teamData[2].teamName}
-          li(class='team team-bottom', id='slot4', data-team-id= + teamData[3].teamID) #{teamData[3].teamName}
+          li(class='team team-top', id='slot3', data-team-id= + teamData[2].teamID)
+            span(class='flag-icon flag-icon-' + teamData[2].countryCode + ' flag-icon-squared') 
+            |  #{teamData[2].teamName}
+          li(class='team team-bottom', id='slot4', data-team-id= + teamData[3].teamID)
+            span(class='flag-icon flag-icon-' + teamData[3].countryCode + ' flag-icon-squared') 
+            |  #{teamData[3].teamName}
         ul(class='matchup game3', data-games='19|26|29')
-          li(class='team team-top', id='slot5', data-team-id= + teamData[4].teamID) #{teamData[4].teamName}
-          li(class='team team-bottom', id='slot6', data-team-id= + teamData[5].teamID) #{teamData[5].teamName}
+          li(class='team team-top', id='slot5', data-team-id= + teamData[4].teamID)
+            span(class='flag-icon flag-icon-' + teamData[4].countryCode + ' flag-icon-squared') 
+            |  #{teamData[4].teamName}
+          li(class='team team-bottom', id='slot6', data-team-id= + teamData[5].teamID)
+            span(class='flag-icon flag-icon-' + teamData[5].countryCode + ' flag-icon-squared') 
+            |  #{teamData[5].teamName}
         ul(class='matchup game4', data-games='20|26|29')
-          li(class='team team-top', id='slot7', data-team-id= + teamData[6].teamID) #{teamData[6].teamName}
-          li(class='team team-bottom', id='slot8', data-team-id= + teamData[7].teamID) #{teamData[7].teamName}
+          li(class='team team-top', id='slot7', data-team-id= + teamData[6].teamID)
+            span(class='flag-icon flag-icon-' + teamData[6].countryCode + ' flag-icon-squared') 
+            |  #{teamData[6].teamName}
+          li(class='team team-bottom', id='slot8', data-team-id= + teamData[7].teamID)
+            span(class='flag-icon flag-icon-' + teamData[7].countryCode + ' flag-icon-squared') 
+            |  #{teamData[7].teamName}
         //- END ROUND ONE
-        //- LEFT TOP 16 END
+        //- LEFT TOP 8 END
   
       div.round.round-two
-        //- LEFT TOP 8 START
+        //- LEFT TOP 4 START
         div.round-details.quaterfinal-header
           | Quaterfinals
           br
           span.date July 6
         ul(class='matchup game9', data-games='25|29')
-          li(class='team team-top ' + userPickedTeamData[0].pickCSS, id='slot17', data-team-id=userPickedTeamData[0].teamID) #{userPickedTeamData[0].teamName}
-          li(class='team team-bottom ' + userPickedTeamData[1].pickCSS, id='slot18', data-team-id=userPickedTeamData[1].teamID) #{userPickedTeamData[1].teamName}
+          li(class='team team-top ' + userPickedTeamData[0].pickCSS, id='slot17', data-team-id=userPickedTeamData[0].teamID) 
+            span(class='flag-icon flag-icon-' + userPickedTeamData[0].countryCode + ' flag-icon-squared') 
+            |  #{userPickedTeamData[0].teamName}
+          li(class='team team-bottom ' + userPickedTeamData[1].pickCSS, id='slot18', data-team-id=userPickedTeamData[1].teamID)
+            span(class='flag-icon flag-icon-' + userPickedTeamData[1].countryCode + ' flag-icon-squared') 
+            |   #{userPickedTeamData[1].teamName}
         ul(class='matchup game10', data-games='26|29')
-          li(class='team team-top ' + userPickedTeamData[2].pickCSS, id='slot19', data-team-id=userPickedTeamData[2].teamID) #{userPickedTeamData[2].teamName}
-          li(class='team team-bottom ' + userPickedTeamData[3].pickCSS, id='slot20', data-team-id=userPickedTeamData[3].teamID) #{userPickedTeamData[3].teamName}
+          li(class='team team-top ' + userPickedTeamData[2].pickCSS, id='slot19', data-team-id=userPickedTeamData[2].teamID)
+            span(class='flag-icon flag-icon-' + userPickedTeamData[2].countryCode + ' flag-icon-squared') 
+            |  #{userPickedTeamData[2].teamName}
+          li(class='team team-bottom ' + userPickedTeamData[3].pickCSS, id='slot20', data-team-id=userPickedTeamData[3].teamID)
+            span(class='flag-icon flag-icon-' + userPickedTeamData[3].countryCode + ' flag-icon-squared') 
+            |  #{userPickedTeamData[3].teamName}
         //- END ROUND TWO
-        //- LEFT TOP 8 END
+        //- LEFT TOP 4 END
     
-      div.round.round-three
-        //- LEFT TOP 4 START
+      div.round.round-three-left
+        //- LEFT TOP 2 START
         div.round-details.semifinal-header
           | Semifinals
           br
           span.date July 10
         ul(class='matchup game13', data-games='29')
-          li(class='team team-top ' + userPickedTeamData[8].pickCSS, id='slot25', data-team-id=userPickedTeamData[8].teamID) #{userPickedTeamData[8].teamName}
-          li(class='team team-bottom ' + userPickedTeamData[9].pickCSS, id='slot26', data-team-id=userPickedTeamData[9].teamID) #{userPickedTeamData[9].teamName}
+          li(class='team team-top ' + userPickedTeamData[8].pickCSS, id='slot25', data-team-id=userPickedTeamData[8].teamID)
+            span(class='flag-icon flag-icon-' + userPickedTeamData[8].countryCode + ' flag-icon-squared') 
+            |  #{userPickedTeamData[8].teamName}
+          li(class='team team-bottom ' + userPickedTeamData[9].pickCSS, id='slot26', data-team-id=userPickedTeamData[9].teamID)
+            span(class='flag-icon flag-icon-' + userPickedTeamData[9].countryCode + ' flag-icon-squared') 
+            |  #{userPickedTeamData[9].teamName}
         //- END ROUND THREE
-        //- LEFT TOP 4 END
+        //- LEFT TOP 2 END
   
     div.champion.top
       div.semis-l
@@ -67,59 +95,91 @@ section#bracket
           br
           span.date July 15
         ul(class='matchup game15 championship', data-games='none')
-          li(class='team team-top ' + userPickedTeamData[12].pickCSS, id='slot29', data-team-id=userPickedTeamData[12].teamID) #{userPickedTeamData[12].teamName}
-          li(class='team team-bottom ' + userPickedTeamData[13].pickCSS, id='slot30', data-team-id=userPickedTeamData[13].teamID) #{userPickedTeamData[13].teamName}
+          li(class='team team-top ' + userPickedTeamData[12].pickCSS, id='slot29', data-team-id=userPickedTeamData[12].teamID)
+            span(class='flag-icon flag-icon-' + userPickedTeamData[12].countryCode + ' flag-icon-squared') 
+            |  #{userPickedTeamData[12].teamName}
+          li(class='team team-bottom ' + userPickedTeamData[13].pickCSS, id='slot30', data-team-id=userPickedTeamData[13].teamID)
+            span(class='flag-icon flag-icon-' + userPickedTeamData[13].countryCode + ' flag-icon-squared') 
+            |  #{userPickedTeamData[13].teamName}
   
         span(id='worldCupWinner', data-pick=userPickedTeamData[14].pickCSS ? userPickedTeamData[14].pickCSS : '', data-team=userPickedTeamData[14].teamName, data-team-id=userPickedTeamData[14].teamID)
 
     div.split.split-two.top
-      //- RIGHT TOP 4 END
-      div.round.round-three
+      //- RIGHT TOP 2 END
+      div.round.round-three-right
         div.round-details.semifinal-header
           | Semifinals
           br
           span.date July 11 
         ul(class='matchup game14', data-games='30')
-          li(class='team team-top ' + userPickedTeamData[10].pickCSS, id='slot27', data-team-id=userPickedTeamData[10].teamID) #{userPickedTeamData[10].teamName}
-          li(class='team team-bottom ' + userPickedTeamData[11].pickCSS, id='slot28', data-team-id=userPickedTeamData[11].teamID) #{userPickedTeamData[11].teamName}
+          li(class='team team-top ' + userPickedTeamData[10].pickCSS, id='slot27', data-team-id=userPickedTeamData[10].teamID)
+            span(class='flag-icon flag-icon-' + userPickedTeamData[10].countryCode + ' flag-icon-squared') 
+            |  #{userPickedTeamData[10].teamName}
+          li(class='team team-bottom ' + userPickedTeamData[11].pickCSS, id='slot28', data-team-id=userPickedTeamData[11].teamID)
+            span(class='flag-icon flag-icon-' + userPickedTeamData[11].countryCode + ' flag-icon-squared') 
+            |  #{userPickedTeamData[11].teamName}
         //- END ROUND THREE
-        //- RIGHT TOP 4 END
+        //- RIGHT TOP 2 END
   
       div.round.round-two
-        //- RIGHT TOP 8 START
+        //- RIGHT TOP 4 START
         div.round-details.quaterfinal-header
           | Quaterfinals
           br
           span.date July 7   
         ul(class='matchup game11', data-games='27|30')
-          li(class='team team-top ' + userPickedTeamData[4].pickCSS, id='slot21', data-team-id=userPickedTeamData[4].teamID) #{userPickedTeamData[4].teamName}
-          li(class='team team-bottom ' + userPickedTeamData[5].pickCSS, id='slot22', data-team-id=userPickedTeamData[5].teamID) #{userPickedTeamData[5].teamName}
+          li(class='team team-top ' + userPickedTeamData[4].pickCSS, id='slot21', data-team-id=userPickedTeamData[4].teamID)
+            span(class='flag-icon flag-icon-' + userPickedTeamData[4].countryCode + ' flag-icon-squared') 
+            |  #{userPickedTeamData[4].teamName}
+          li(class='team team-bottom ' + userPickedTeamData[5].pickCSS, id='slot22', data-team-id=userPickedTeamData[5].teamID)
+            span(class='flag-icon flag-icon-' + userPickedTeamData[5].countryCode + ' flag-icon-squared') 
+            |  #{userPickedTeamData[5].teamName}
         ul(class='matchup game12', data-games='28|30')
-          li(class='team team-top ' + userPickedTeamData[6].pickCSS, id='slot23', data-team-id=userPickedTeamData[6].teamID) #{userPickedTeamData[6].teamName}
-          li(class='team team-bottom ' + userPickedTeamData[7].pickCSS, id='slot24', data-team-id=userPickedTeamData[7].teamID) #{userPickedTeamData[7].teamName}
+          li(class='team team-top ' + userPickedTeamData[6].pickCSS, id='slot23', data-team-id=userPickedTeamData[6].teamID)
+            span(class='flag-icon flag-icon-' + userPickedTeamData[6].countryCode + ' flag-icon-squared') 
+            |  #{userPickedTeamData[6].teamName}
+          li(class='team team-bottom ' + userPickedTeamData[7].pickCSS, id='slot24', data-team-id=userPickedTeamData[7].teamID)
+            span(class='flag-icon flag-icon-' + userPickedTeamData[7].countryCode + ' flag-icon-squared') 
+            |  #{userPickedTeamData[7].teamName}
         //- END ROUND TWO
-        //- RIGHT TOP 8 END
+        //- RIGHT TOP 4 END
     
       div.round.round-one.current 
-        //- RIGHT TOP 16 START
+        //- RIGHT TOP 8 START
         div.round-details
           | Round of 16
           br
           span.date July 1 & July 3
         ul(class='matchup game5', data-games='21|27|30')
-          li(class='team team-top', id='slot9', data-team-id= + teamData[8].teamID) #{teamData[8].teamName}
-          li(class='team team-bottom', id='slot10', data-team-id= + teamData[9].teamID) #{teamData[9].teamName}
+          li(class='team team-top', id='slot9', data-team-id= + teamData[8].teamID)
+            span(class='flag-icon flag-icon-' + teamData[8].countryCode + ' flag-icon-squared') 
+            |  #{teamData[8].teamName}
+          li(class='team team-bottom', id='slot10', data-team-id= + teamData[9].teamID)
+            span(class='flag-icon flag-icon-' + teamData[9].countryCode + ' flag-icon-squared') 
+            |  #{teamData[9].teamName}
         ul(class='matchup game6', data-games='22|27|30')
-          li(class='team team-top', id='slot11', data-team-id= + teamData[10].teamID) #{teamData[10].teamName}
-          li(class='team team-bottom', id='slot12', data-team-id= + teamData[11].teamID) #{teamData[11].teamName}
+          li(class='team team-top', id='slot11', data-team-id= + teamData[10].teamID)
+            span(class='flag-icon flag-icon-' + teamData[10].countryCode + ' flag-icon-squared') 
+            |  #{teamData[10].teamName}
+          li(class='team team-bottom', id='slot12', data-team-id= + teamData[11].teamID)
+            span(class='flag-icon flag-icon-' + teamData[11].countryCode + ' flag-icon-squared') 
+            |  #{teamData[11].teamName}
         ul(class='matchup game7', data-games='23|28|30')
-          li(class='team team-top', id='slot13', data-team-id= + teamData[12].teamID) #{teamData[12].teamName}
-          li(class='team team-bottom', id='slot14', data-team-id= + teamData[13].teamID) #{teamData[13].teamName}
+          li(class='team team-top', id='slot13', data-team-id= + teamData[12].teamID)
+            span(class='flag-icon flag-icon-' + teamData[12].countryCode + ' flag-icon-squared') 
+            |  #{teamData[12].teamName}
+          li(class='team team-bottom', id='slot14', data-team-id= + teamData[13].teamID)
+            span(class='flag-icon flag-icon-' + teamData[13].countryCode + ' flag-icon-squared') 
+            |  #{teamData[13].teamName}
         ul(class='matchup game8', data-games='24|28|30')
-          li(class='team team-top', id='slot15', data-team-id= + teamData[14].teamID) #{teamData[14].teamName}
-          li(class='team team-bottom', id='slot16', data-team-id= + teamData[15].teamID) #{teamData[15].teamName}
+          li(class='team team-top', id='slot15', data-team-id= + teamData[14].teamID)
+            span(class='flag-icon flag-icon-' + teamData[14].countryCode + ' flag-icon-squared') 
+            |  #{teamData[14].teamName}
+          li(class='team team-bottom', id='slot16', data-team-id= + teamData[15].teamID)
+            span(class='flag-icon flag-icon-' + teamData[15].countryCode + ' flag-icon-squared') 
+            |  #{teamData[15].teamName}
         //- END ROUND ONE
-        //- RIGHT TOP 16 END             
+        //- RIGHT TOP 8 END             
 
     //- show form to submit pool data
     if userBracketInfoForm
