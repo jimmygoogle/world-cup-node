@@ -9,6 +9,9 @@ World Cup bracket written in node.js/mysql. This is very similar to the node nca
 3. run 'npm start'
 4. Go to http://localhost:8888 
 
+## Demo
+You can see a demo [here](http://worldcup.jimandmeg.com/demo)
+
 ## License
 
 This project is licensed under the GNU General Public License - see the [LICENSE](LICENSE) file for details
