@@ -2,8 +2,8 @@
 
 body {
   font-family: 'Istok Web', sans-serif;
-  background: url('/images/grass.jpg') no-repeat #000;
-  background-size: cover;min-height: 100%
+  background: url('/images/grass.jpg') repeat #000;
+  min-height: 100%
   margin: 0;
 }
 
@@ -27,7 +27,7 @@ body {
 .hero p {
   font-family: 'Abel', sans-serif;
   text-transform: uppercase;
-  color: #004E89; 
+  color: #FFF300; 
   letter-spacing: 6px;
   font-size: 1.2em;
 }

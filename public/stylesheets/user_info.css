@@ -40,7 +40,7 @@ hr.details {
   width: 100%;
   background: #fff;
   margin-bottom: 4%;
-  border: 1px solid #004E89;
+  border: 1px solid #000;
   padding: 6%;
   color: #555;
 }
@@ -57,7 +57,7 @@ hr.details {
   width: 65%;
   background: #fff;
   margin-bottom: 4%;
-  border: 1px solid #004E89;
+  border: 1px solid #000000;
   padding: 3%;
   color: #555;
 }
@@ -79,12 +79,13 @@ hr.details {
   -moz-box-sizing: border-box;
   width: 100%;
   padding: 3%;
-  background: #004E89;
+  background: #FFF300;
   border-top-style: none;
   border-bottom-style: none;  
   border-right-style: none;
-  border-left-style: none;  
-  color: #fff;
+  border-left-style: none;
+  border: 1px solid #000;
+  color: #000;
   text-transform: uppercase;
   font-weight : bold;
   font-size: 20px;
@@ -96,12 +97,13 @@ hr.details {
   -moz-box-sizing: border-box;
   width: 65%;
   padding: 3%;
-  background: #004E89;
+  background: #FFF300;
   border-top-style: none;
   border-bottom-style: none;  
   border-right-style: none;
-  border-left-style: none;  
-  color: #fff;
+  border-left-style: none;
+  border: 1px solid #000;
+  color: #000;
   text-transform: uppercase;
   font-weight : bold;
   font-size: 20px;

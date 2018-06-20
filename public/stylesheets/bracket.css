@@ -37,12 +37,6 @@ li {
   padding: 230px 0\9;
 }
 
-.champion i {
-  color: #a0a6a8; 
-  font-size: 45px;
-  padding: 10px 0; 
-}
-
 .game1 {float: left;}
 .game2 {float: right;}
 
@@ -138,7 +132,7 @@ li {
 }
 
 .championship-header {
-  transform: translate(0px, -65px);
+  transform: translate(0px, -17px);
 }
 
 .champion1 li, .champion li, .round li {
@@ -209,10 +203,11 @@ ul.championship {
 }
 
 .date {
-	font-size: 10px; 
- letter-spacing: 2px;
- font-family: 'Istok Web', sans-serif;
- color:#3F915F;
+	 font-size: 10px; 
+  letter-spacing: 2px;
+  font-family: 'Istok Web', sans-serif;
+  color:#33803F;
+  font-weight: bold;
 }
 
 .userNameDisplay {
