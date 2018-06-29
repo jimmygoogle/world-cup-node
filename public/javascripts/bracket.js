@@ -32,9 +32,11 @@ function loadUserPicks() {
     const slotData = $(this).attr('id').match(/slot(\d+)/);
     const startSlot = 17;
   
+    //console.log('slot is %s', slotData[1]);
     if(slotData[1] >= startSlot) {
       const teamID = $(this).attr('data-team-id');
-      const gameID = slotData[1] - 17
+      const gameID = $(this).attr('data-game-id');
+
       if(teamID > 0) {
         userPicks[gameID] = teamID;
       }        
@@ -92,7 +94,7 @@ function validateUserInput() {
     const expectedNumberOfGames = 16;
 
     //make sure all games are filled in when we are filling out a bracket
-    if(Object.keys(userPicks).length !== expectedNumberOfGames && (editTypeValue == 'add')) {
+    if(Object.keys(userPicks).length !== expectedNumberOfGames) {
       error_message = 'Please pick all of the games.';
       status = false;
     }
@@ -157,7 +159,7 @@ function validateUserInput() {
       data: data,
       success: function (result) {
         //disable submit button so the users do not flood the system
-        $("#submit").hide();
+        //$("#submit").hide();
 
         // fade slowly when you are not allowing the user to edit multiple times
         const fadeInterval = multipleEdits ? 2000 : 4000;
@@ -183,23 +185,14 @@ function validateUserInput() {
 
 function setUserPick(obj) {
   // set team user picked
-  const userPickedTeam = obj.html();
+  const userPickedHtml = obj.html();
+  const userPickedTeam = obj.text().trim();
 
   // get game number and all possible game slots that the user pick could play in
   // ex: class = "matchup game1 65|97|113|121|125" (we need the 2nd and 3rd element)
   const gameData = obj.parent().attr('class').split(' ');
-
   const gameSlots = obj.parent().attr('data-games');
   const teamID = obj.attr('data-team-id');
-
-  //we want to not allow the user to edit any games previous played if we are in the sweet 16
-  /*
-  const game = gameData[1].match(/game(\d+)/);
-
-  if((game[1] < 49) && $('#bracketType').val() == 'sweetSixteenBracket') {
-    return;
-  }
-  */
 
   // clear all previous picks (in case user is changing pick)
   clearPreviousPicks(gameData[1], userPickedTeam, gameSlots);
@@ -225,10 +218,10 @@ function setUserPick(obj) {
       // set new pick
       const $slot = $('#slot' + newSlot);
       $slot.attr('data-team-id', teamID);
-      $slot.empty().append(userPickedTeam);
+      $slot.empty().append(userPickedHtml);
     }
   }
-  console.log(userPicks);
+  //console.log(userPicks);
 }
 
 function setUserFormData(gameData, teamID) {
@@ -239,7 +232,7 @@ function setUserFormData(gameData, teamID) {
 function clearPreviousPicks(gameNumber, userPickedTeam, slotString) {
   //get the 'other' team in the current game the user is picking
   const getOtherTeamInGame = _getOtherTeamInGame(gameNumber, userPickedTeam);
-  console.log('other team in game is ' + getOtherTeamInGame);
+  //console.log('other team in game is ' + getOtherTeamInGame);
 
   if(getOtherTeamInGame){
     // only check (match) specified slots (ex 81|105|119|127)
@@ -253,17 +246,22 @@ function clearPreviousPicks(gameNumber, userPickedTeam, slotString) {
       const slotNumber = parseInt( $(this).attr('id').match(/\d+/) );
 
       // start at slot 8 and only clear potential games (we dont want to clear all games)
-      if(
-        (slotNumber >= 8)
-        &&
-        (slotMatch.test(slotNumber) )
-      ){
+      if((slotNumber >= 8) && (slotMatch.test(slotNumber))){
         const pick = $(this).text();
-
+        
         //get rid of all future picks that match
         if(pick.match(getOtherTeamInGame) ){
           $(this).empty();
           $(this).attr('data-team-id', '');
+          
+          // clear out winner too
+          if(slotNumber == 29 || slotNumber == 30) {
+            delete userPicks[16];
+            $('#worldCupWinner').attr('data-team-id', '');
+            $('#worldCupWinner').attr('data-team', '');
+            
+            $('#slot' + slotNumber).removeClass('winner');
+          }
         }
       }
     });

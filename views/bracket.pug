@@ -54,17 +54,17 @@ section#bracket
           br
           span.date July 6
         ul(class='matchup game9', data-games='25|29')
-          li(class='team team-top ' + userPickedTeamData[0].pickCSS, id='slot17', data-team-id=userPickedTeamData[0].teamID) 
+          li(class='team team-top ' + userPickedTeamData[0].pickCSS, id='slot17', data-team-id=userPickedTeamData[0].teamID, data-game-id=userPickedTeamData[0].gameID) 
             span(class='flag-icon flag-icon-' + userPickedTeamData[0].countryCode + ' flag-icon-squared') 
             |  #{userPickedTeamData[0].teamName}
-          li(class='team team-bottom ' + userPickedTeamData[1].pickCSS, id='slot18', data-team-id=userPickedTeamData[1].teamID)
+          li(class='team team-bottom ' + userPickedTeamData[1].pickCSS, id='slot18', data-team-id=userPickedTeamData[1].teamID, data-game-id=userPickedTeamData[1].gameID)
             span(class='flag-icon flag-icon-' + userPickedTeamData[1].countryCode + ' flag-icon-squared') 
             |   #{userPickedTeamData[1].teamName}
         ul(class='matchup game10', data-games='26|29')
-          li(class='team team-top ' + userPickedTeamData[2].pickCSS, id='slot19', data-team-id=userPickedTeamData[2].teamID)
+          li(class='team team-top ' + userPickedTeamData[2].pickCSS, id='slot19', data-team-id=userPickedTeamData[2].teamID, data-game-id=userPickedTeamData[2].gameID)
             span(class='flag-icon flag-icon-' + userPickedTeamData[2].countryCode + ' flag-icon-squared') 
             |  #{userPickedTeamData[2].teamName}
-          li(class='team team-bottom ' + userPickedTeamData[3].pickCSS, id='slot20', data-team-id=userPickedTeamData[3].teamID)
+          li(class='team team-bottom ' + userPickedTeamData[3].pickCSS, id='slot20', data-team-id=userPickedTeamData[3].teamID, data-game-id=userPickedTeamData[3].gameID)
             span(class='flag-icon flag-icon-' + userPickedTeamData[3].countryCode + ' flag-icon-squared') 
             |  #{userPickedTeamData[3].teamName}
         //- END ROUND TWO
@@ -77,10 +77,10 @@ section#bracket
           br
           span.date July 10
         ul(class='matchup game13', data-games='29')
-          li(class='team team-top ' + userPickedTeamData[8].pickCSS, id='slot25', data-team-id=userPickedTeamData[8].teamID)
+          li(class='team team-top ' + userPickedTeamData[8].pickCSS, id='slot25', data-team-id=userPickedTeamData[8].teamID, data-game-id=userPickedTeamData[8].gameID)
             span(class='flag-icon flag-icon-' + userPickedTeamData[8].countryCode + ' flag-icon-squared') 
             |  #{userPickedTeamData[8].teamName}
-          li(class='team team-bottom ' + userPickedTeamData[9].pickCSS, id='slot26', data-team-id=userPickedTeamData[9].teamID)
+          li(class='team team-bottom ' + userPickedTeamData[9].pickCSS, id='slot26', data-team-id=userPickedTeamData[9].teamID, data-game-id=userPickedTeamData[9].gameID)
             span(class='flag-icon flag-icon-' + userPickedTeamData[9].countryCode + ' flag-icon-squared') 
             |  #{userPickedTeamData[9].teamName}
         //- END ROUND THREE
@@ -95,14 +95,14 @@ section#bracket
           br
           span.date July 15
         ul(class='matchup game15 championship', data-games='none')
-          li(class='team team-top ' + userPickedTeamData[12].pickCSS, id='slot29', data-team-id=userPickedTeamData[12].teamID)
+          li(class='team team-top ' + userPickedTeamData[12].pickCSS, id='slot29', data-team-id=userPickedTeamData[12].teamID, data-game-id=userPickedTeamData[12].gameID)
             span(class='flag-icon flag-icon-' + userPickedTeamData[12].countryCode + ' flag-icon-squared') 
             |  #{userPickedTeamData[12].teamName}
-          li(class='team team-bottom ' + userPickedTeamData[13].pickCSS, id='slot30', data-team-id=userPickedTeamData[13].teamID)
+          li(class='team team-bottom ' + userPickedTeamData[13].pickCSS, id='slot30', data-team-id=userPickedTeamData[13].teamID, data-game-id=userPickedTeamData[13].gameID)
             span(class='flag-icon flag-icon-' + userPickedTeamData[13].countryCode + ' flag-icon-squared') 
             |  #{userPickedTeamData[13].teamName}
   
-        span(id='worldCupWinner', data-pick=userPickedTeamData[14].pickCSS ? userPickedTeamData[14].pickCSS : '', data-team=userPickedTeamData[14].teamName, data-team-id=userPickedTeamData[14].teamID)
+        span(id='worldCupWinner', data-pick=userPickedTeamData[14].pickCSS ? userPickedTeamData[14].pickCSS : '', data-team=userPickedTeamData[14].teamName, data-team-id=userPickedTeamData[14].teamID, data-game-id=userPickedTeamData[14].gameID)
 
     div.split.split-two.top
       //- RIGHT TOP 2 END
@@ -112,10 +112,10 @@ section#bracket
           br
           span.date July 11 
         ul(class='matchup game14', data-games='30')
-          li(class='team team-top ' + userPickedTeamData[10].pickCSS, id='slot27', data-team-id=userPickedTeamData[10].teamID)
+          li(class='team team-top ' + userPickedTeamData[10].pickCSS, id='slot27', data-team-id=userPickedTeamData[10].teamID, data-game-id=userPickedTeamData[10].gameID)
             span(class='flag-icon flag-icon-' + userPickedTeamData[10].countryCode + ' flag-icon-squared') 
             |  #{userPickedTeamData[10].teamName}
-          li(class='team team-bottom ' + userPickedTeamData[11].pickCSS, id='slot28', data-team-id=userPickedTeamData[11].teamID)
+          li(class='team team-bottom ' + userPickedTeamData[11].pickCSS, id='slot28', data-team-id=userPickedTeamData[11].teamID, data-game-id=userPickedTeamData[11].gameID)
             span(class='flag-icon flag-icon-' + userPickedTeamData[11].countryCode + ' flag-icon-squared') 
             |  #{userPickedTeamData[11].teamName}
         //- END ROUND THREE
@@ -128,17 +128,17 @@ section#bracket
           br
           span.date July 7   
         ul(class='matchup game11', data-games='27|30')
-          li(class='team team-top ' + userPickedTeamData[4].pickCSS, id='slot21', data-team-id=userPickedTeamData[4].teamID)
+          li(class='team team-top ' + userPickedTeamData[4].pickCSS, id='slot21', data-team-id=userPickedTeamData[4].teamID, data-game-id=userPickedTeamData[4].gameID)
             span(class='flag-icon flag-icon-' + userPickedTeamData[4].countryCode + ' flag-icon-squared') 
             |  #{userPickedTeamData[4].teamName}
-          li(class='team team-bottom ' + userPickedTeamData[5].pickCSS, id='slot22', data-team-id=userPickedTeamData[5].teamID)
+          li(class='team team-bottom ' + userPickedTeamData[5].pickCSS, id='slot22', data-team-id=userPickedTeamData[5].teamID, data-game-id=userPickedTeamData[5].gameID)
             span(class='flag-icon flag-icon-' + userPickedTeamData[5].countryCode + ' flag-icon-squared') 
             |  #{userPickedTeamData[5].teamName}
         ul(class='matchup game12', data-games='28|30')
-          li(class='team team-top ' + userPickedTeamData[6].pickCSS, id='slot23', data-team-id=userPickedTeamData[6].teamID)
+          li(class='team team-top ' + userPickedTeamData[6].pickCSS, id='slot23', data-team-id=userPickedTeamData[6].teamID, data-game-id=userPickedTeamData[6].gameID)
             span(class='flag-icon flag-icon-' + userPickedTeamData[6].countryCode + ' flag-icon-squared') 
             |  #{userPickedTeamData[6].teamName}
-          li(class='team team-bottom ' + userPickedTeamData[7].pickCSS, id='slot24', data-team-id=userPickedTeamData[7].teamID)
+          li(class='team team-bottom ' + userPickedTeamData[7].pickCSS, id='slot24', data-team-id=userPickedTeamData[7].teamID, data-game-id=userPickedTeamData[7].gameID)
             span(class='flag-icon flag-icon-' + userPickedTeamData[7].countryCode + ' flag-icon-squared') 
             |  #{userPickedTeamData[7].teamName}
         //- END ROUND TWO
