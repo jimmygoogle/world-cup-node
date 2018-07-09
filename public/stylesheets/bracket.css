@@ -229,11 +229,11 @@ ul.championship {
   font-family: 'Holtwood One SC', serif;
 } 
 
-.game1, .game2, .game3, .game4 {
+.game1, .game2, .game3, .game4, .game9, .game10 {
   text-align: right;
 }
 
-.game9, .game10, .game11, .game12, .game13, .game14 {
+.game13, .game14 {
   text-align: center;
 }
 

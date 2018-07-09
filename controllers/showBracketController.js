@@ -98,7 +98,8 @@ const getBracket = (args) => {
                 gameID: data.gameID,
                 teamID: data.teamID,
                 seedID: data.seedID,
-                teamName: data.teamName
+                teamName: data.teamName,
+                countryCode: data.countryCode
             };
           }
         }
